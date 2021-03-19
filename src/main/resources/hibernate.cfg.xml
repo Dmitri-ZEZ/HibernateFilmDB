@@ -1,0 +1,31 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL5Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/imdb <!--полключение к бд-->
+        </property>
+
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="current_session_context_class">
+            thread
+        </property>
+        <property name="show_sql">
+            true
+        </property>
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <!-- Anotations и маппинг классов-->
+        <mapping class="model.Movie"/>
+        <mapping class="model.Director"/>
+
+
+        <!-- XLM-mapping-->
+        <!--        <mapping resource="User.hbm.xml"/> -->
+    </session-factory>
+</hibernate-configuration>
